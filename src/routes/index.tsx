@@ -1,24 +1,62 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { GameProvider, useGame } from "@/store/game-store";
+import {
+  DiscoveryScreen,
+  HomeScreen,
+  IntroScreen,
+  ModeScreen,
+  PlayScreen,
+  ResultsScreen,
+  RevealScreen,
+  SetupScreen,
+} from "@/components/game/screens";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const TITLE = "Argentina: Historia de una Nación — Mitos y Verdades";
+const DESCRIPTION =
+  "Juego educativo de historia argentina. Poné a prueba diez mitos sobre la Revolución e Independencia (1810–1816) y descubrí qué dicen las fuentes.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
+function Stage() {
+  const { phase } = useGame();
+  switch (phase) {
+    case "mode":
+      return <ModeScreen />;
+    case "setup":
+      return <SetupScreen />;
+    case "intro":
+      return <IntroScreen />;
+    case "play":
+      return <PlayScreen />;
+    case "reveal":
+      return <RevealScreen />;
+    case "results":
+      return <ResultsScreen />;
+    case "discovery":
+      return <DiscoveryScreen />;
+    default:
+      return <HomeScreen />;
+  }
+}
+
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background bg-museo text-foreground">
+      <GameProvider>
+        <Stage />
+      </GameProvider>
     </div>
   );
 }
