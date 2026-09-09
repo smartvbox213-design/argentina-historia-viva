@@ -37,7 +37,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
   const [results, setResults] = useState<CardResult[]>([]);
   const [elapsed, setElapsed] = useState(0);
 
-  const current = cards[index];
+  const current = cards[index] ?? cards[0]!;
 
   const start = useCallback(() => {
     setIndex(0);
