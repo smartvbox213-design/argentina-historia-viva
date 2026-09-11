@@ -20,6 +20,7 @@ export function RevealScreen() {
 
   const points = pointsFor(outcome);
   const xp = xpFor(outcome, sourceConsulted);
+  const sources = getSourcesForCard(current);
 
   return (
     <Screen>
