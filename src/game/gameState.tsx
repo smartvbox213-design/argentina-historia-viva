@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from "react";
 import { CARDS } from "@/data/cards";
-import { evaluate, pointsFor, xpFor, summarize, type Summary } from "@/lib/game-logic";
-import type { AnswerOption, Card, CardResult, Outcome, Phase } from "@/types/game";
+import { evaluate, pointsFor, summarize, xpFor } from "@/game/scoring";
+import type { AnswerOption, Card, CardResult, Outcome, Phase, Summary } from "@/types/game";
 
 interface GameState {
   phase: Phase;
@@ -76,8 +76,7 @@ export function GameProvider({ children }: { children: ReactNode }) {
       sourceConsulted,
       streakAfter: nextStreak,
     };
-    const all = [...results, entry];
-    setResults(all);
+    setResults([...results, entry]);
     setSelected(null);
     setOutcome(null);
     setSourceConsulted(false);

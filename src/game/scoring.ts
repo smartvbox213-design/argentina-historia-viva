@@ -1,6 +1,9 @@
-import type { AnswerOption, CardResult, Outcome } from "@/types/game";
+import type { AnswerOption, CardResult, Outcome, Summary } from "@/types/game";
 
 const NUANCED: AnswerOption[] = ["PARCIALMENTE CIERTO", "NECESITA CONTEXTO"];
+
+export const COMPLETION_BONUS_XP = 20;
+export const MATCH_BONUS_XP = 15;
 
 export function evaluate(selected: AnswerOption | null, correct: AnswerOption): Outcome {
   if (selected === null) return "SIN RESPUESTA";
@@ -22,21 +25,6 @@ export function xpFor(outcome: Outcome, sourceConsulted: boolean): number {
   return xp;
 }
 
-export const COMPLETION_BONUS_XP = 20;
-export const MATCH_BONUS_XP = 15;
-
-export interface Summary {
-  totalPoints: number;
-  correct: number;
-  partial: number;
-  incorrect: number;
-  unanswered: number;
-  accuracy: number;
-  totalXp: number;
-  bestStreak: number;
-  rank: "Explorador" | "Investigador" | "Historiador";
-}
-
 export function summarize(results: CardResult[], totalCards: number): Summary {
   const correct = results.filter((r) => r.outcome === "CORRECTO").length;
   const partial = results.filter((r) => r.outcome === "RESPUESTA PARCIAL").length;
@@ -55,7 +43,17 @@ export function summarize(results: CardResult[], totalCards: number): Summary {
   const rank: Summary["rank"] =
     accuracy >= 85 ? "Historiador" : accuracy >= 60 ? "Investigador" : "Explorador";
 
-  return { totalPoints, correct, partial, incorrect, unanswered, accuracy, totalXp, bestStreak, rank };
+  return {
+    totalPoints,
+    correct,
+    partial,
+    incorrect,
+    unanswered,
+    accuracy,
+    totalXp,
+    bestStreak,
+    rank,
+  };
 }
 
 export function formatTime(seconds: number): string {

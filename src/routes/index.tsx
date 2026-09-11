@@ -1,15 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { GameProvider, useGame } from "@/store/game-store";
+import { GameProvider, useGame } from "@/game/gameState";
 import {
+  ConfigScreen,
   DiscoveryScreen,
   HomeScreen,
   IntroScreen,
-  ModeScreen,
+  ModeSelectionScreen,
   PlayScreen,
   ResultsScreen,
   RevealScreen,
-  SetupScreen,
-} from "@/components/game/screens";
+} from "@/screens";
 
 const TITLE = "Argentina: Historia de una Nación — Mitos y Verdades";
 const DESCRIPTION =
@@ -33,9 +33,9 @@ function Stage() {
   const { phase } = useGame();
   switch (phase) {
     case "mode":
-      return <ModeScreen />;
+      return <ModeSelectionScreen />;
     case "setup":
-      return <SetupScreen />;
+      return <ConfigScreen />;
     case "intro":
       return <IntroScreen />;
     case "play":

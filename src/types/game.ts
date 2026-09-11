@@ -53,6 +53,18 @@ export type Phase =
   | "results"
   | "discovery";
 
+export interface Summary {
+  totalPoints: number;
+  correct: number;
+  partial: number;
+  incorrect: number;
+  unanswered: number;
+  accuracy: number;
+  totalXp: number;
+  bestStreak: number;
+  rank: "Explorador" | "Investigador" | "Historiador";
+}
+
 export interface Discovery {
   name: string;
   year: string;
