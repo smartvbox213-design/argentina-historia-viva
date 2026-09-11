@@ -27,13 +27,7 @@ export const CARDS: Card[] = [
     context:
       "La Revolución de Mayo inició el proceso de autogobierno en el Río de la Plata tras la captura del rey Fernando VII por Napoleón, pero la ruptura formal y definitiva con la monarquía española se consolidó seis años más tarde.",
     concepts: ["Revolución de Mayo", "Primera Junta", "Independencia", "Buenos Aires", "Tucumán"],
-    source: {
-      title: "Acta Capitular del 25 de mayo de 1810",
-      author: "Cabildo de Buenos Aires",
-      year: "1810",
-      excerpt:
-        "Se constituye la Junta Provisional Gubernativa de las Provincias del Río de la Plata a nombre del señor Don Fernando VII...",
-    },
+    sourceIds: ["SRC-001"],
     points: 2,
     xp: 10,
     timeLimit: 15,
@@ -59,13 +53,7 @@ export const CARDS: Card[] = [
       "Independencia",
       "Formación del Estado",
     ],
-    source: {
-      title: "Estatuto Provisional y Decretos de Mayo",
-      author: "Primera Junta",
-      year: "1810",
-      excerpt:
-        "Provincias del Río de la Plata en transición política tras la disolución del poder virreinal central.",
-    },
+    sourceIds: ["SRC-002"],
     points: 2,
     xp: 10,
     timeLimit: 15,
@@ -92,13 +80,7 @@ export const CARDS: Card[] = [
       "Conflicto político",
       "Pensamiento crítico",
     ],
-    source: {
-      title: "Memorias Curiosas",
-      author: "Juan Manuel Beruti",
-      year: "1810",
-      excerpt:
-        "Crónicas de las diversas facciones y opiniones encontradas entre vecinos, eclesiásticos y milicias en las jornadas de mayo.",
-    },
+    sourceIds: ["SRC-003"],
     points: 2,
     xp: 10,
     timeLimit: 15,
@@ -120,13 +102,7 @@ export const CARDS: Card[] = [
     context:
       "El Cabildo Abierto convocaba únicamente a los 'vecinos principales': hombres propietarios, miembros de la elite mercantil, militar o eclesiástica. La inmensa mayoría de la población (mujeres, esclavizados, pueblos originarios y sectores populares) estaba excluida del voto.",
     concepts: ["Cabildo abierto", "Representación política", "Democracia", "Anacronismo"],
-    source: {
-      title: "Lista de concurrentes al Cabildo Abierto del 22 de mayo",
-      author: "Archivo General de la Nación",
-      year: "1810",
-      excerpt:
-        "Registro de los vecinos destacados citados por esquela para deliberar sobre la cesación del virrey.",
-    },
+    sourceIds: ["SRC-004"],
     points: 2,
     xp: 10,
     timeLimit: 15,
@@ -148,13 +124,7 @@ export const CARDS: Card[] = [
     context:
       "Ciudades como Córdoba, Montevideo y Asunción resistieron la autoridad porteña, lo que desató expediciones militares revolucionarias y una prolongada guerra territorial en todo el espacio virreinal.",
     concepts: ["Buenos Aires", "Virreinato", "Revolución", "Territorio", "Contexto"],
-    source: {
-      title: "Oficios de la Junta Gubernativa a los Cabildos del Interior",
-      author: "Primera Junta",
-      year: "1810",
-      excerpt:
-        "Comunicaciones exigiendo juramento de obediencia y el envío de diputados desde las ciudades del interior.",
-    },
+    sourceIds: ["SRC-005"],
     points: 2,
     xp: 10,
     timeLimit: 15,
@@ -175,13 +145,7 @@ export const CARDS: Card[] = [
     context:
       "La elección de Tucumán como sede del Congreso buscó federalizar las decisiones y alejar el poder de las tensiones políticas y hegemonías de Buenos Aires, garantizando un punto de encuentro geográfico para los diputados provinciales.",
     concepts: ["Tucumán", "Congreso", "9 de julio", "Independencia"],
-    source: {
-      title: "Acta de Declaración de la Independencia de las Provincias Unidas",
-      author: "Congreso de Tucumán",
-      year: "1816",
-      excerpt:
-        "En la benemérita y muy digna ciudad de San Miguel de Tucumán... declaran solemnemente la independencia de los reyes de España.",
-    },
+    sourceIds: ["SRC-006"],
     points: 2,
     xp: 10,
     timeLimit: 15,
@@ -202,13 +166,7 @@ export const CARDS: Card[] = [
     context:
       "Fue la ruptura definitiva con España y con 'toda otra dominación extranjera' (fórmula agregada días después), consolidando el estatus soberano de las provincias en plena reconquista absolutista en el resto de América del Sur.",
     concepts: ["Congreso de Tucumán", "Independencia", "1816"],
-    source: {
-      title: "Manifiesto a las Naciones del Congreso General Constituyente",
-      author: "Congreso de Tucumán",
-      year: "1816",
-      excerpt:
-        "Justificación solemne ante el mundo de los motivos de las Provincias Unidas para emanciparse de la corona española.",
-    },
+    sourceIds: ["SRC-007"],
     points: 2,
     xp: 10,
     timeLimit: 15,
@@ -230,13 +188,7 @@ export const CARDS: Card[] = [
     context:
       "San Martín comprendió que la revolución en el Río de la Plata nunca estaría segura mientras el centro neurálgico del poderío realista en Lima se mantuviera intacto. Por ello ideó el Plan Continental: cruzar la cordillera, liberar Chile y avanzar por mar al Perú.",
     concepts: ["San Martín", "Mendoza", "Andes", "Chile", "Perú", "Estrategia continental"],
-    source: {
-      title: "Correspondencia entre José de San Martín y Tomás Godoy Cruz",
-      author: "José de San Martín",
-      year: "1816",
-      excerpt:
-        "Cartas donde San Martín apremia la declaración de independencia para dar estatus legal al Ejército Libertador que cruzaría los Andes.",
-    },
+    sourceIds: ["SRC-008"],
     points: 2,
     xp: 10,
     timeLimit: 15,
@@ -262,13 +214,7 @@ export const CARDS: Card[] = [
     context:
       "La enarboló a orillas del río Paraná en las baterías Libertad e Independencia (Rosario) en febrero de 1812. Aunque el Triunvirato inicialmente le ordenó guardarla por razones diplomáticas, fue adoptada formalmente por el Congreso de Tucumán en 1816.",
     concepts: ["Belgrano", "Bandera", "1812", "Símbolos nacionales"],
-    source: {
-      title: "Comunicación de Manuel Belgrano al Gobierno Superior",
-      author: "Manuel Belgrano",
-      year: "1812",
-      excerpt:
-        "Siendo preciso enarbolar bandera y no teniéndola, la mandé hacer celeste y blanca, conforme a los colores de la escarapela nacional...",
-    },
+    sourceIds: ["SRC-009"],
     points: 2,
     xp: 10,
     timeLimit: 15,
@@ -290,13 +236,7 @@ export const CARDS: Card[] = [
     context:
       "La historia no es una crónica fija ni mera opinión; es una disciplina científica basada en el análisis riguroso de fuentes documentales, donde perspectivas teóricas divergentes iluminan aspectos complementarios de un proceso complejo.",
     concepts: ["Historiografía", "Interpretación", "Evidencia", "Pensamiento crítico"],
-    source: {
-      title: "¿Qué es la historia?",
-      author: "E.H. Carr",
-      year: "1961",
-      excerpt:
-        "La historia es un proceso continuo de interacción entre el historiador y sus hechos, un diálogo sin fin entre el presente y el pasado.",
-    },
+    sourceIds: ["SRC-010"],
     points: 2,
     xp: 10,
     timeLimit: 15,

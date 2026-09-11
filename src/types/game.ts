@@ -5,10 +5,14 @@ export type AnswerOption =
   | "NECESITA CONTEXTO";
 
 export interface HistoricalSource {
+  id: string;
   title: string;
   author: string;
+  institution?: string;
   year: string;
-  excerpt: string;
+  type?: string;
+  url?: string;
+  description: string;
 }
 
 export interface Card {
@@ -22,7 +26,7 @@ export interface Card {
   explanation: string;
   context: string;
   concepts: string[];
-  source: HistoricalSource;
+  sourceIds: string[];
   points: number;
   xp: number;
   timeLimit: number;
