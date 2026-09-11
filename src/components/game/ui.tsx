@@ -70,6 +70,29 @@ export function LockedCard({ title, note }: { title: string; note?: string }) {
   );
 }
 
+export function TimerBar({ progress, urgent }: { progress: number; urgent?: boolean }) {
+  return (
+    <div className="h-1.5 w-full overflow-hidden rounded-full bg-border/60">
+      <div
+        className={cn(
+          "h-full rounded-full transition-[width] duration-1000 ease-linear",
+          urgent ? "bg-destructive" : "bg-sol",
+        )}
+        style={{ width: `${progress}%` }}
+      />
+    </div>
+  );
+}
+
+export function StreakBadge({ streak }: { streak: number }) {
+  if (streak < 3) return null;
+  return (
+    <span className="rounded-full border border-sol/50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-sol">
+      🔥 Racha x{streak}
+    </span>
+  );
+}
+
 export function Stat({ label, value }: { label: string; value: ReactNode }) {
   return (
     <div className="rounded-xl border border-border/60 bg-card/50 px-4 py-3">
