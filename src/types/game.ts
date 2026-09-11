@@ -14,7 +14,30 @@ export interface HistoricalSource {
   url?: string;
   description: string;
 }
+export interface HistoricalEvent {
+  id: string;
+  title: string;
+  year: string;
+  description: string;
+  sourceIds: string[];
+}
 
+export interface HistoricalPerson {
+  id: string;
+  name: string;
+  description: string;
+  sourceIds: string[];
+}
+
+export interface HistoricalPlace {
+  id: string;
+  name: string;
+  description: string;
+  province: string;
+  latitude: number | null;
+  longitude: number | null;
+  sourceIds: string[];
+}
 export interface Card {
   id: string;
   title: string;
