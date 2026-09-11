@@ -51,13 +51,22 @@ export function RevealScreen() {
         </section>
         <section>
           <Eyebrow>¿Cómo sabemos esto?</Eyebrow>
-          <p className="mt-2 font-serif text-lg text-foreground">
-            {current.source.title} · {current.source.author} ({current.source.year})
-          </p>
-          {openSource ? (
-            <p className="mt-3 rounded-xl border border-sol/30 bg-sol/5 p-4 text-sm leading-relaxed text-muted-foreground">
-              {current.source.excerpt}
+          {sources.map((s) => (
+            <p key={s.id} className="mt-2 font-serif text-lg text-foreground">
+              {s.title} · {s.author} ({s.year})
             </p>
+          ))}
+          {openSource ? (
+            <div className="mt-3 space-y-3">
+              {sources.map((s) => (
+                <p
+                  key={s.id}
+                  className="rounded-xl border border-sol/30 bg-sol/5 p-4 text-sm leading-relaxed text-muted-foreground"
+                >
+                  {s.description}
+                </p>
+              ))}
+            </div>
           ) : (
             <Button
               variant="sol"
