@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useGame } from "@/game/gameState";
+import { getSourcesForCard } from "@/data/sources";
 import { pointsFor, xpFor } from "@/game/scoring";
 import { Button, Eyebrow, Panel, Screen, Stat, StreakBadge } from "@/components/game/ui";
 import { cn } from "@/lib/utils";
