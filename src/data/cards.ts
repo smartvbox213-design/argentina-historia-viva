@@ -195,7 +195,6 @@ relatedPlaces: ["PLC-001", "PLC-004", "PLC-005"],
     relatedEvents: ["EVT-011", "EVT-012", "EVT-013"],
     relatedPeople: ["PER-012", "PER-013"],
     relatedPlaces: ["PLC-008", "PLC-009", "PLC-010", "PLC-011"],
-    ],
   },
   {
     id: "MYT-009",
