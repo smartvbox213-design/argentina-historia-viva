@@ -9,7 +9,7 @@ export const PLACES: HistoricalPlace[] = [
     province: "Buenos Aires",
     latitude: null,
     longitude: null,
-    sourceIds: ["SRC-001", "SRC-003", "SRC-004", "SRC-005"],
+    sourceIds: ["SRC-001", "SRC-003", "SRC-004", "SRC-005", "SRC-011", "SRC-012"],
   },
   {
     id: "PLC-002",

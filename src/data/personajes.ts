@@ -55,7 +55,7 @@ export const PEOPLE: HistoricalPerson[] = [
     name: "Santiago de Liniers",
     description:
       "Figura vinculada con la resistencia al proceso revolucionario en Córdoba.",
-    sourceIds: ["SRC-005"],
+    sourceIds: ["SRC-005", "SRC-011", "SRC-012"],
   },
   {
     id: "PER-009",
@@ -112,6 +112,12 @@ export const PEOPLE: HistoricalPerson[] = [
     description:
       "Historiador utilizado como referencia para los debates historiográficos sobre la Revolución de Mayo.",
     sourceIds: ["SRC-010"],
+  },
+  {
+    id: "PER-017",
+    name: "Martín de Álzaga",
+    description: "Alcalde que organizó la defensa de la ciudad de Buenos Aires en 1807.",
+    sourceIds: ["SRC-011", "SRC-012"],
   },
 ];
 

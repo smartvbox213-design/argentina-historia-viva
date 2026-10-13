@@ -1,10 +1,10 @@
-import { CARDS, DISCOVERY } from "@/data/cards";
 import { useGame } from "@/game/gameState";
 import { Button, Eyebrow, Panel, Screen } from "@/components/game/ui";
 
 export function DiscoveryScreen() {
-  const { reset } = useGame();
-  const related = CARDS.filter((c) => DISCOVERY.relatedCards.includes(c.id));
+  const { reset, collection } = useGame();
+  const DISCOVERY = collection.discovery;
+  const related = collection.cards.filter((c) => DISCOVERY.relatedCards.includes(c.id));
   return (
     <Screen>
       <div className="space-y-2 text-center">

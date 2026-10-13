@@ -81,6 +81,26 @@ export const SOURCES: HistoricalSource[] = [
     description:
       "La historia es un proceso continuo de interacción entre el historiador y sus hechos, un diálogo sin fin entre el presente y el pasado.",
   },
+  {
+    id: "SRC-011",
+    title: "Ocupación y reconquista 1806-1807: a 200 años de las invasiones inglesas",
+    author: "Andrew Graham-Yooll",
+    institution: "Lumiere",
+    year: "2006",
+    type: "Libro",
+    description:
+      "Obra sobre las Invasiones Inglesas que incluye el diario de viaje del teniente coronel Lancelot Holland.",
+  },
+  {
+    id: "SRC-012",
+    title:
+      "The British Invasion of the River Plate 1806-1807: How the Redcoats Were Humbled and a Nation Was Born",
+    author: "Ben Hughes",
+    year: "2014",
+    type: "Libro",
+    description:
+      "Estudio sobre la campaña británica en el Río de la Plata y su derrota en Buenos Aires.",
+  },
 ];
 
 const SOURCE_MAP = new Map(SOURCES.map((s) => [s.id, s]));

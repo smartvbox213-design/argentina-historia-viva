@@ -1,4 +1,4 @@
-import type { AnswerOption, Card, Discovery } from "@/types/game";
+import type { AnswerOption, Card, Collection, Discovery } from "@/types/game";
 
 export const OPTIONS: AnswerOption[] = [
   "VERDADERO",
@@ -8,6 +8,7 @@ export const OPTIONS: AnswerOption[] = [
 ];
 
 export const COLLECTION = "REVOLUCIÓN E INDEPENDENCIA · 1810–1816";
+export const COLLECTION_INVASIONES = "INVASIONES INGLESAS · 1806–1807";
 
 export const INTRO_TEXT = [
   "Entre 1810 y 1816 se produjo una transformación política decisiva en el territorio del antiguo Virreinato del Río de la Plata. La Revolución de Mayo abrió un proceso de cambios, conflictos y disputas que culminó con la declaración de independencia en Tucumán en 1816.",
@@ -257,3 +258,65 @@ export const DISCOVERY: Discovery = {
   people: ["Cornelio Saavedra", "Mariano Moreno", "Juan José Castelli", "Manuel Belgrano"],
   relatedCards: ["MYT-001", "MYT-002", "MYT-003", "MYT-004", "MYT-005"],
 };
+
+export const INTRO_TEXT_INVASIONES = [
+  "Entre 1806 y 1807 fuerzas británicas intentaron en dos oportunidades ocupar territorios del Río de la Plata. Ambas invasiones fueron rechazadas: en 1807, la defensa organizada en las calles de Buenos Aires obligó a las tropas del general Whitelocke a capitular.",
+];
+
+export const CARDS_INVASIONES: Card[] = [
+  {
+    id: "MYT-011",
+    title: "ACEITE HIRVIENDO",
+    collection: COLLECTION_INVASIONES,
+    category: "Historia",
+    statement:
+      "En 1807 los porteños vencieron a los ingleses arrojándoles aceite hirviendo desde los techos.",
+    options: OPTIONS,
+    correctAnswer: "PARCIALMENTE CIERTO",
+    explanation:
+      "La resistencia desde azoteas y balcones es parte central del relato clásico de la Defensa de Buenos Aires de 1807, y varias obras de divulgación mencionan agua y aceite hirviendo. Pero la derrota británica no se explica por ese recurso: la ciudad fue preparada casa por casa bajo la dirección del alcalde Martín de Álzaga y combatieron milicias urbanas y tropas con armas de fuego. El detalle del aceite proviene sobre todo de la tradición y no pudimos verificarlo en documentos de época.",
+    context:
+      "Whitelocke atacó el 5 de julio de 1807 con columnas separadas y sin apoyo de artillería, en calles donde la defensa estaba organizada. Dos días de combate callejero terminaron en la capitulación del 7 de julio, que incluyó el abandono de Montevideo.",
+    concepts: [
+      "Defensa de Buenos Aires",
+      "Milicias urbanas",
+      "Martín de Álzaga",
+      "Santiago de Liniers",
+      "Memoria histórica",
+    ],
+    sourceIds: ["SRC-011", "SRC-012"],
+    points: 2,
+    xp: 10,
+    timeLimit: 15,
+    relatedEvents: ["EVT-017"],
+    relatedPeople: ["PER-017", "PER-008"],
+    relatedPlaces: ["PLC-001"],
+  },
+];
+
+export const DISCOVERY_INVASIONES: Discovery = {
+  name: "Defensa de Buenos Aires",
+  year: "1807",
+  place: "Buenos Aires",
+  description:
+    "Rechazo del ataque del general Whitelocke sobre Buenos Aires entre el 5 y el 7 de julio de 1807.",
+  concepts: ["Defensa de Buenos Aires", "Milicias urbanas", "Memoria histórica"],
+  event: "Defensa de Buenos Aires · 5 al 7 de julio de 1807",
+  people: ["Martín de Álzaga", "Santiago de Liniers"],
+  relatedCards: ["MYT-011"],
+};
+
+export const COLLECTIONS: Collection[] = [
+  { id: "revolucion", name: COLLECTION, cards: CARDS, intro: INTRO_TEXT, discovery: DISCOVERY },
+  {
+    id: "invasiones",
+    name: COLLECTION_INVASIONES,
+    cards: CARDS_INVASIONES,
+    intro: INTRO_TEXT_INVASIONES,
+    discovery: DISCOVERY_INVASIONES,
+  },
+];
+
+export function getCollection(id: string): Collection {
+  return COLLECTIONS.find((c) => c.id === id) ?? COLLECTIONS[0]!;
+}

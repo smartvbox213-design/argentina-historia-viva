@@ -102,3 +102,11 @@ export interface Discovery {
   people: string[];
   relatedCards: string[];
 }
+
+export interface Collection {
+  id: string;
+  name: string;
+  cards: Card[];
+  intro: string[];
+  discovery: Discovery;
+}

@@ -129,6 +129,14 @@ export const EVENTS: HistoricalEvent[] = [
       "Debates e interpretaciones historiográficas diferentes sobre la Revolución de Mayo.",
     sourceIds: ["SRC-010"],
   },
+  {
+    id: "EVT-017",
+    title: "Defensa de Buenos Aires",
+    year: "1807",
+    description:
+      "Rechazo del ataque del general Whitelocke sobre Buenos Aires entre el 5 y el 7 de julio de 1807.",
+    sourceIds: ["SRC-011", "SRC-012"],
+  },
 ];
 
 export function getEventById(id: string): HistoricalEvent | undefined {
