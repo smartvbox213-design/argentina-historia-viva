@@ -1,10 +1,12 @@
 import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from "react";
-import { CARDS } from "@/data/cards";
+import { COLLECTIONS, getCollection } from "@/data/cards";
 import { evaluate, pointsFor, summarize, xpFor } from "@/game/scoring";
-import type { AnswerOption, Card, CardResult, Outcome, Phase, Summary } from "@/types/game";
+import type { AnswerOption, Card, CardResult, Collection, Outcome, Phase, Summary } from "@/types/game";
 
 interface GameState {
   phase: Phase;
+  collection: Collection;
+  setCollection: (id: string) => void;
   cards: Card[];
   index: number;
   current: Card;
@@ -27,7 +29,9 @@ interface GameState {
 const GameContext = createContext<GameState | null>(null);
 
 export function GameProvider({ children }: { children: ReactNode }) {
-  const cards = CARDS;
+  const [collectionId, setCollectionId] = useState(COLLECTIONS[0]!.id);
+  const collection = getCollection(collectionId);
+  const cards = collection.cards;
   const [phase, setPhase] = useState<Phase>("home");
   const [index, setIndex] = useState(0);
   const [selected, setSelected] = useState<AnswerOption | null>(null);
@@ -108,6 +112,8 @@ export function GameProvider({ children }: { children: ReactNode }) {
 
   const value: GameState = {
     phase,
+    collection,
+    setCollection: setCollectionId,
     cards,
     index,
     current,
